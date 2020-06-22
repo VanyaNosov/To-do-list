@@ -6,11 +6,18 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/',
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
+  resolve: {
+    extensions: ['.js', '.ts']
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: './src/index.html'
     })
   ],
   module: {
