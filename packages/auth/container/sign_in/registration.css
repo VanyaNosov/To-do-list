@@ -1,0 +1,38 @@
+.registrationFields:last-child {
+  margin-bottom: 0px;
+}
+
+.buttonRout {
+  cursor: pointer;
+  transition: 0.8s;
+  top: 390px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 10px 5px;
+  font-size: 18px;
+  line-height: 30px;
+  width: 120px;
+  text-align: center;
+  background: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nameField {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.fieldBlock:nth-last-child() {
+  margin-bottom: 20px;
+}
+
+.registrationFieldsContainer {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+
