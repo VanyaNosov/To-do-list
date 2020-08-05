@@ -12,17 +12,31 @@ class signUp extends React.Component {
       firstName: '',
       lastName: '',
     };
+    this.stateRes = 'red'
+    this.buttonState = { color: 'activeB' }
   }
   updateInputValue(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
+
   sendingRequest() {
-    (async () => {
-      const r = await request('http://localhost:3000/sign_up', 'POST', JSON.stringify(this.state))
-    })()
+    const r = request('http://localhost:3000/sign_up', "POST", this.state)
+      .then(function (response) {
+        return response.json()
+      })
+      .then((data) => {
+        if (!data.token) {
+          throw data;
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        this.setState({ color: this.buttonState.color = "noActiveB" })
+      });
   }
+
   render() {
     return (
       <div className={style.registrationFieldsContainer}>
@@ -45,7 +59,7 @@ class signUp extends React.Component {
         <div className={style.buttonRout}>
           <NavLink to="/signIn">Sing in</NavLink>
         </div>
-        <button id="vanya" onClick={() => this.sendingRequest()}>
+        <button className={style[this.buttonState.color]} onClick={() => this.sendingRequest()}>
           Login
         </button>
       </div >

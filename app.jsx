@@ -1,10 +1,7 @@
 import React from 'react';
 import signIn from './packages/auth/container/sign_in/registration.jsx';
 import signUp from './packages/auth/container/sign_up/login.jsx';
-import style from './app.css';
-import test from './packages/auth/api';
-
-// import apiAuth from './packages/auth/api/index.js';
+import style from './reset.css'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 const App = () => {
@@ -15,7 +12,6 @@ const App = () => {
           <Route path="/signIn" component={signIn} />
           <Route path="/signUp" component={signUp} />
         </Switch>
-
       </div>
     </Router>
   );
